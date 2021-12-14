@@ -9,8 +9,7 @@ const Shop = () => {
             {collections.map(({id, ...otherCollectionProps}) => (
                 <PreviewCollection  key={id} {...otherCollectionProps}/>
             ))}
-        </div>
-    )
+        </div>)
 }
 
 export default Shop;
