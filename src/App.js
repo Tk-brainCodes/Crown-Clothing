@@ -9,7 +9,7 @@ import {auth, createUserProfileDocument} from './firebase/firebase.utils';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
-  let unSubscribeFromAuth = null;
+  let unSubscribeFromAuth =  null;
   
   useEffect(() => {
    unSubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
@@ -21,13 +21,15 @@ function App() {
             ...snapShot.data()
           })
         })
+        console.log(currentUser)
+
       } else {
-        setCurrentUser(userAuth);
-      }
-      return () => {
-        unSubscribeFromAuth();
+        setCurrentUser(currentUser);
       }
     });
+    return () => {
+  unSubscribeFromAuth()
+  }
   });
 
   
