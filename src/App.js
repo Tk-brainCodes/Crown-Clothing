@@ -5,19 +5,29 @@ import Shop from './Pages/Shop/shop.component';
 import Header from './Components/header/header.component';
 import SignInAndSignUpPage from './Pages/sign-in-and-sign-up/sign-in-and-sign-up.components';
 import { Switch, Route} from 'react-router-dom'
-import {auth} from './firebase/firebase.utils';
+import {auth, createUserProfileDocument} from './firebase/firebase.utils';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   let unSubscribeFromAuth = null;
   
   useEffect(() => {
-   unSubscribeFromAuth = auth.onAuthStateChanged(user => {
-      setCurrentUser(user);
+   unSubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if(userAuth){
+        const userRef = await createUserProfileDocument(userAuth)
+        userRef.onSnapshot(snapShot => {
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data()
+          })
+        })
+      } else {
+        setCurrentUser(userAuth);
+      }
       return () => {
         unSubscribeFromAuth();
       }
-    }, [currentUser]);
+    });
   });
 
   
