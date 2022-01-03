@@ -29,7 +29,7 @@ const SignUp = () => {
           setEmail('');
           setConfirmPassword('');
       } catch (error) {
-          
+          console.error(error);
       }
     }
 
