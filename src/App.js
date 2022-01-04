@@ -11,7 +11,6 @@ import {setCurrentUser} from './redux/user/user.actions';
 
 function App({currentUser}) {
   let unSubscribeFromAuth =  null;
-  
   useEffect(() => {
    // eslint-disable-next-line react-hooks/exhaustive-deps
    unSubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
@@ -48,6 +47,6 @@ const mapStateToProps = ({user}) => ({
   currentUser: user.currentUser
 })
 const mapDispatchToProps = dispatch => ({
-   setCurrentUser: user  => dispatch(setCurrentUser(user))
+   setCurrentUser: user => dispatch(setCurrentUser(user))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(App);
