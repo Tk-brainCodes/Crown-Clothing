@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import './App.css';
 import Homepage from '../src/Pages/Homepage/Homepage.component';
 import Shop from './Pages/Shop/shop.component';
+import Checkout from './Pages/checkout/checkout.components';
 import Header from './Components/header/header.component';
 import SignInAndSignUpPage from './Pages/sign-in-and-sign-up/sign-in-and-sign-up.components';
 import { Switch, Route, Redirect} from 'react-router-dom'
@@ -38,6 +39,7 @@ function App({currentUser}) {
       <Switch>
         <Route exact path="/" component={Homepage}/>
         <Route path="/Shop" component={Shop} />
+        <Route exact path='/checkout' component={Checkout} />
         <Route exact path="/signin" render={() => currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage/>} /> 
       </Switch>
     </div>
