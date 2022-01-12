@@ -1,9 +1,9 @@
 # CROWN CLOTHING
 A full-stack React application built for buying your favourite wears, add to cart, checkout payments. 
 
-## Tech stack \
--React js 
--Redux (State management) 
+## Tech stack 
+-React js \ 
+-Redux (State management) \ 
 -CSS/SCSS 
 -Firebase (Online realtime database) 
 -Graphql 
@@ -11,7 +11,7 @@ A full-stack React application built for buying your favourite wears, add to car
 -Jest (For testing purposes) 
 
 
-## Functionalites contained: \
+## Functionalites contained: 
 -Sign In/ Sign up 
 -customize your cart: 
 -Add to cart 
