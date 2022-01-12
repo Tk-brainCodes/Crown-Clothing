@@ -3,7 +3,7 @@ A full-stack React application built for buying your favourite wears, add to car
 
 ## Tech stack 
 -React js\ 
--Redux (State management)\ 
+-Redux (State management)
 -CSS/SCSS 
 -Firebase (Online realtime database) 
 -Graphql 
