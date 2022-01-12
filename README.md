@@ -1,7 +1,7 @@
 ###CROWN CLOTHING
-A full-stack React application built for buying your favourite wears, add to cart, checkout payments./
+A full-stack React application built for buying your favourite wears, add to cart, checkout payments.
 
-##Tech stack:
+## Tech stack
 -React js/
 -Redux (State management)/
 -CSS/SCSS/
