@@ -2,8 +2,8 @@
 A full-stack React application built for buying your favourite wears, add to cart, checkout payments. 
 
 ## Tech stack 
--React js \ 
--Redux (State management) \ 
+-React js\ 
+-Redux (State management)\ 
 -CSS/SCSS 
 -Firebase (Online realtime database) 
 -Graphql 
