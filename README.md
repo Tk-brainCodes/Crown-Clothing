@@ -3,6 +3,7 @@ A full-stack React application built for buying your favourite wears, add to car
 
 ## Tech stack 
 React js.\
+Redux (State management), CSS/SCSS, Firebase (Online realtime database), Graphql, Typescript, Jest (For testing purposes)
 
 
 The page will reload if you make edits.\
