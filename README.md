@@ -1,5 +1,6 @@
 # CROWN CLOTHING
-A full-stack React application built for buying your favourite wears, add to cart, checkout payments. 
+A full-stack React application built for buying your favourite wears, add to cart, checkout payments. \
+url: https://crown-clothing-shop.vercel.app/
 
 ## Tech stack 
 
