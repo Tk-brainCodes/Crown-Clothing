@@ -14,7 +14,7 @@ A full-stack React application built for buying your favourite wears, add to car
 
 
 
-##Clone the repo
+## Clone the repo
 ### `git clone https://github.com/Tk-brainCodes/Crown-Clothing.git`
 
 
