@@ -15,7 +15,7 @@ A full-stack React application built for buying your favourite wears, add to car
 This are the tech stacks used in developing this project.
 
 
-### `clone repo`
+### `git clone https://github.com/Tk-brainCodes/Crown-Clothing.git`
 You can clone or fork the repo.
 
 
