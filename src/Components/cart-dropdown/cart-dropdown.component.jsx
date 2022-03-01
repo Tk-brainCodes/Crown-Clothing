@@ -8,6 +8,7 @@ import CartItem from '../cart-item/cart-item.component';
 import CustomButton from '../custom-buttons/custom-buttons.component';
 import './cart-dropdown.styles.scss';
 
+
 const CartDropdown = ({cartItem, history, dispatch}) => {
     return (
         <div className='cart-dropdown'>
