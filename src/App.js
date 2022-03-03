@@ -1,17 +1,19 @@
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 import {connect} from 'react-redux';
 import './App.css';
 import Homepage from '../src/Pages/Homepage/Homepage.component';
 import Shop from './Pages/Shop/shop.component';
 import Checkout from './Pages/checkout/checkout.components';
 import Header from './Components/header/header.component';
-import SignInAndSignUpPage from './Pages/sign-in-and-sign-up/sign-in-and-sign-up.components';
 import { Switch, Route, Redirect} from 'react-router-dom'
 import {auth, createUserProfileDocument} from './firebase/firebase.utils';
 import {setCurrentUser} from './redux/user/user.actions';
+import { createStructuredSelector } from 'reselect';
+import SignInAndSignUpPage from './Pages/sign-in-and-sign-up/sign-in-and-sign-up.components';
+import { selectCurrentUser } from './redux/user/user.selector';
 
 function App({currentUser}) {
-  let unSubscribeFromAuth =  null;
+   let unSubscribeFromAuth =  null;
   useEffect(() => {
    // eslint-disable-next-line react-hooks/exhaustive-deps
    unSubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
@@ -23,9 +25,8 @@ function App({currentUser}) {
             ...snapShot.data()
           })
         })
-      } else {
+      } 
         setCurrentUser(userAuth);
-      }
     });
     return () => {
   unSubscribeFromAuth();
@@ -40,13 +41,13 @@ function App({currentUser}) {
         <Route exact path="/" component={Homepage}/>
         <Route path="/Shop" component={Shop} />
         <Route exact path='/checkout' component={Checkout} />
-        <Route exact path="/signin" render={() => currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage/>} /> 
+        <Route exact path="/signin" render={() => currentUser === true ? <Redirect to="/" /> : <SignInAndSignUpPage />} /> 
       </Switch>
     </div>
   );
 }
-const mapStateToProps = ({user}) => ({
-  currentUser: user.currentUser
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
 })
 const mapDispatchToProps = dispatch => ({
    setCurrentUser: user => dispatch(setCurrentUser(user))
