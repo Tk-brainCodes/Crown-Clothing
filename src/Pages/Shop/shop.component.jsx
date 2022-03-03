@@ -7,11 +7,10 @@ import { firestore, convertCollectionSnapshotToMap } from '../../firebase/fireba
 import { updateCollections } from '../../redux/shop/shop.action';
 
 const Shop = ({match, updateCollections}) => {
-    let unsubscribeFromSnashot = null;
     useEffect(() => {
        const collectionRef = firestore.collection('collections');
 
-      unsubscribeFromSnashot = collectionRef.onSnapshot(async snapshop => {
+      collectionRef.onSnapshot(async snapshop => {
         const collectionMap = convertCollectionSnapshotToMap(snapshop);
         updateCollections(collectionMap);
        })
