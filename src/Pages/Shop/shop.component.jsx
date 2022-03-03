@@ -15,9 +15,9 @@ const Shop = ({match, updateCollections}) => {
         const collectionMap = convertCollectionSnapshotToMap(snapshop);
         updateCollections(collectionMap);
        })
-    }, [unsubscribeFromSnashot]);
+    });
 
-    
+
     return (
         <div className="shop-page">
             <Route exact path={`${match.path}`} component={CollectionOverview}/>
