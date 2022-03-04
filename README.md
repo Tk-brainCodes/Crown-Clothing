@@ -2,7 +2,6 @@
 A full-stack React application built for buying your favourite wears, add to cart, checkout payments. \
 url: https://crown-clothing-shop.vercel.app/
 
-<hr />
 
 <h2>Tech stack</h2> 
 
@@ -20,7 +19,7 @@ url: https://crown-clothing-shop.vercel.app/
 
 
 <h2> Clone this repo </h2>
-<p> git clone https://github.com/Tk-brainCodes/Crown-Clothing.git</p>
+## git clone https://github.com/Tk-brainCodes/Crown-Clothing.git
 
 
 
