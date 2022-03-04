@@ -13,11 +13,12 @@
   <li>Graphql</li>
   <li>Typescript</li>
   <li>Jest (For testing purposes)</li>
+  <li>Javascript (ES6+)</li>
 </ul>
 
 
 <h2> Clone this repo </h2>
-## git clone https://github.com/Tk-brainCodes/Crown-Clothing.git
+##git clone https://github.com/Tk-brainCodes/Crown-Clothing.git
 
 
 <h2> Functionalites contained.</h2>
