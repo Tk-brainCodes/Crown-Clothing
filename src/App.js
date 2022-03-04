@@ -13,10 +13,8 @@ import SignInAndSignUpPage from './Pages/sign-in-and-sign-up/sign-in-and-sign-up
 import { selectCurrentUser } from './redux/user/user.selector';
 
 function App({currentUser}) {
-   let unSubscribeFromAuth =  null;
   useEffect(() => {
-   // eslint-disable-next-line react-hooks/exhaustive-deps
-   unSubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+   auth.onAuthStateChanged(async userAuth => {
       if(userAuth){
         const userRef = await createUserProfileDocument(userAuth)
         userRef.onSnapshot(snapShot => {
@@ -28,9 +26,6 @@ function App({currentUser}) {
       } 
         setCurrentUser(userAuth);
     });
-    return () => {
-  unSubscribeFromAuth();
-  }
   });
 
   
