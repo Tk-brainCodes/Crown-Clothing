@@ -25,7 +25,7 @@ git clone https://github.com/Tk-brainCodes/Crown-Clothing.git
 ```
 cd Crown-Clothing
 ```
-## Install Dependencies
+## Install All Dependencies
 ```
 npm install
 ```
