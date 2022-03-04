@@ -53,6 +53,8 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.3.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "redux-devtools": "^3.7.0"
   }
 }
