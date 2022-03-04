@@ -1,8 +1,9 @@
-import { render, screen } from '@testing-library/react';
+import {shallow, mount, render} from 'enzyme';
+import React from 'react';
 import App from './App';
 
-test('renders application', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+it("expects to render App Component", (done) => {
+    expect.assertions(1);
+    expect(shallow(<App/>).toEqual(1));
+    done();
+})
