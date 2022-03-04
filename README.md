@@ -20,7 +20,7 @@ url: https://crown-clothing-shop.vercel.app/
 
 
 <h2> Clone this repo </h2>
-<li> git clone</li> https://github.com/Tk-brainCodes/Crown-Clothing.git
+<p> git clone https://github.com/Tk-brainCodes/Crown-Clothing.git</p>
 
 
 
