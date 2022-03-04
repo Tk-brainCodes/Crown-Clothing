@@ -1,10 +1,10 @@
-# CROWN CLOTHING
+<h1> CROWN CLOTHING </h2>
 A full-stack React application built for buying your favourite wears, add to cart, checkout payments. \
 url: https://crown-clothing-shop.vercel.app/
 
 <hr />
 
-## Tech stack 
+<h2>Tech stack</h2> 
 
 <ul>
   <li>React js</li>
@@ -19,7 +19,7 @@ url: https://crown-clothing-shop.vercel.app/
 
 
 
-## Clone this repo
+<h2> Clone this repo </h2>
 <li> `git clone https://github.com/Tk-brainCodes/Crown-Clothing.git`</li>
 
 <hr/>
@@ -27,14 +27,16 @@ url: https://crown-clothing-shop.vercel.app/
 
 
 
-## Functionalites contained.
+<h2> Functionalites contained.</h2>
 
 <ul>
   <li>Sign In/ Sign up </li>
   <li> customize your cart: </li>
-  <ol>Add to cart</ol> 
-  <ol>remove from cart </ol>
-  <ol>increase/decrease quantity </ol>
-  <ol>checkout </ol>
-  <oL>view different categories of products</ol>
+  <ol>
+   <li>Add to cart</li> 
+  <li>remove from cart </li>
+  <li>increase/decrease quantity </li>
+  <li>checkout </li>
+  <li>view different categories of products</li>
+  </ol>
  </ul>
