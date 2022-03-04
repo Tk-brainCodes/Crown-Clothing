@@ -3,7 +3,7 @@
 <p>url: https://crown-clothing-shop.vercel.app/</p>
 
 
-##Tech stack
+## Tech stack
 
 <ul>
   <li>React js</li>
@@ -17,7 +17,7 @@
 </ul>
 
 
- ##How to use this repo
+ ## How to use this repo
  ```
 git clone https://github.com/Tk-brainCodes/Crown-Clothing.git
 ```
@@ -25,11 +25,11 @@ git clone https://github.com/Tk-brainCodes/Crown-Clothing.git
 ```
 cd Crown-Clothing
 ```
-##Install Dependencies
+## Install Dependencies
 ```
 npm install
 ```
-##Start Development Server
+## Start Development Server
 ```
 npm start
 ```
