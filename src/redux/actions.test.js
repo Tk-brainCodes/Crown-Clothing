@@ -15,4 +15,4 @@ describe("make sure current user action works", () => {
      }
      expect(setCurrentUser(user)).toEqual(expectedAction)
    })
-})
+});
