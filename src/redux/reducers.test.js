@@ -60,7 +60,7 @@ describe("make sure it toggles", () => {
 //     it("should add the items", () => {
 //         expect(cartReducer(INITIAL_STATE, {
 //             type: CartActionTypes.ADD_ITEM,
-//             payload: INITIAL_STATE.cartItem
+//             payload: INITIAL_STATE.cartItem.length
 //         })).toBeGreaterThan(1)
 //     })
 // })
