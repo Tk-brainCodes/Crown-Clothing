@@ -18,7 +18,7 @@ const Header = ({currentUser, hidden}) => {
                 <OptionLink to="/shop">SHOP</OptionLink>
                  <OptionLink to="/contact">CONTACT</OptionLink>
                  {
-                     currentUser === true ?
+                     currentUser ?
                      (
                      <OptionDiv onClick={() => auth.signOut()}>
                         SIGN OUT
