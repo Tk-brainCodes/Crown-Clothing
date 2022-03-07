@@ -17,7 +17,7 @@ const Shop = ({match, updateCollections}) => {
     useEffect(() => {
        const collectionRef = firestore.collection('collections'); 
 
-      collectionRef.onSnapshot(async snapshop => {
+      collectionRef.get().then(snapshop => {
         const collectionMap = convertCollectionSnapshotToMap(snapshop);
         updateCollections(collectionMap);
         setIsLoading(false)
