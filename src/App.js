@@ -7,9 +7,9 @@ import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from './redux/user/user.selector';
 import MainPage from './Pages/MainPage/MainPage.component';
 
-function App({currentUser}) {
+function App({currentUser, setCurrentUserProfile}) {
   useEffect(() => {
-  auth.onAuthStateChanged(async userAuth => {
+   auth.onAuthStateChanged(async userAuth => {
       if(userAuth){
         const userRef = await createUserProfileDocument(userAuth)
         userRef.onSnapshot(snapShot => {
@@ -19,7 +19,7 @@ function App({currentUser}) {
           })
         })
       } 
-        setCurrentUser(userAuth);
+        setCurrentUserProfile(userAuth);
     });
   });
 
@@ -34,6 +34,6 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
 })
 const mapDispatchToProps = dispatch => ({
-   setCurrentUser: user => dispatch(setCurrentUser(user))
+   setCurrentUserProfile: user => dispatch(setCurrentUser(user))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(App);
