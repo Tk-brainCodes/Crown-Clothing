@@ -8,8 +8,8 @@ import { fetchCollectionsFailure,fetchCollectionsSuccess } from './shop.action';
 export function* fetchCollectionsAsync() {
     yield console.log("i am fired");
     try {
-    const collectionRef = firestore.collection('collections'); 
-    const snapshot = yield collectionRef.get();
+    const collectionRef = firestore.collection('collections'); //patch "/collections"
+    const snapshot = yield collectionRef.get(); //get request to "/collections"
     const collectionMap = yield call(convertCollectionSnapshotToMap, snapshot);
     yield put(fetchCollectionsSuccess(collectionMap)); //dispatch success
     } catch (error) {
