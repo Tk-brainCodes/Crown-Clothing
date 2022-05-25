@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { signUpStart } from "../../redux/user/user.actions";
+import { connect } from "react-redux";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-buttons/custom-buttons.component";
-import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 import "./sign-up.styles.scss";
 
-const SignUp = () => {
+const SignUp = ({ signUpUser }: any) => {
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,16 +27,7 @@ const SignUp = () => {
       alert("Password does not match");
       return;
     }
-    try {
-      const user = auth.createUserWithEmailAndPassword(email, password);
-      await createUserProfileDocument(user, { displayName });
-      setPassword("");
-      setDisplayName("");
-      setEmail("");
-      setConfirmPassword("");
-    } catch (error) {
-      console.error(error);
-    }
+    signUpUser({ displayName, email, password });
   };
 
   return (
@@ -84,4 +76,7 @@ const SignUp = () => {
     </div>
   );
 };
-export default SignUp;
+const matchDispatchToProps = (dispatch: any) => ({
+  signUpUser: (userCredentials: any) => dispatch(signUpStart(userCredentials)),
+});
+export default connect(null, matchDispatchToProps)(SignUp);

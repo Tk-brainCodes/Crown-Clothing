@@ -11,12 +11,18 @@ import {
   SignInSuccess,
   signOutFailure,
   signOutSuccess,
+  signUpSuccess,
+  signUpFailure,
 } from "./user.actions";
 
 //auth helper function
-export function* getSnapShotFromUserAuth(userAuth) {
+export function* getSnapShotFromUserAuth(userAuth, additionalData) {
   try {
-    const userRef = yield call(createUserProfileDocument, userAuth);
+    const userRef = yield call(
+      createUserProfileDocument,
+      userAuth,
+      additionalData
+    );
     const userSnapshot = yield userRef.get(); //get the user collection
     yield put(SignInSuccess({ id: userSnapshot.id, ...userSnapshot.data() })); //get the id and data of the user
   } catch (error) {
@@ -44,6 +50,21 @@ export function* signInWithEmail({ payload: { email, password } }) {
   }
 }
 
+//sign up
+export function* signUp({ payload: { email, password, displayName } }) {
+  try {
+    const { user } = yield auth.createUserWithEmailAndPassword(email, password);
+    yield put(signUpSuccess({ user, additionalData: { displayName } }));
+  } catch (error) {
+    yield put(signUpFailure(error));
+  }
+}
+
+//sign in after signup
+export function* signAfterSignUp({ payload: { user, additionalData } }) {
+  yield getSnapShotFromUserAuth(user, additionalData);
+}
+
 //check user session
 export function* isUserAuthenticated() {
   try {
@@ -63,6 +84,14 @@ export function* signOut() {
   } catch (error) {
     yield put(signOutFailure(error));
   }
+}
+
+export function* onSignUpStart() {
+  yield takeLatest(UserActionTypes.SIGN_UP_START, signUp);
+}
+
+export function* onSignUpSuccess() {
+  yield takeLatest(UserActionTypes.SIGN_UP_SUCCESS, signAfterSignUp);
 }
 
 export function* onSignOutStart() {
@@ -87,5 +116,7 @@ export function* userSaga() {
     call(onEmailSignInStart),
     call(checkUserSessions),
     call(onSignOutStart),
+    call(onSignUpStart),
+    call(onSignUpSuccess),
   ]);
 }
