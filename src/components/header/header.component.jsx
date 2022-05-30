@@ -12,15 +12,12 @@ import { ReactComponent as Logo } from "../../assets/crown.svg";
 import CartIcon from "../cart-icons/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import { CartContext } from "../../provider/cart.provider";
-import "./header.styles.scss";
 
 const Header = ({ currentUser, signOutUser }) => {
   const { hidden } = useContext(CartContext);
   return (
     <HeaderStyledContainer>
-      <LogoContainer to="/">
-        <Logo className="logo" />
-      </LogoContainer>
+      <LogoContainer to="/">Apparel.</LogoContainer>
       <OptionsContainer>
         <OptionLink to="/shop">SHOP</OptionLink>
         <OptionLink to="/contact">CONTACT</OptionLink>
@@ -29,9 +26,8 @@ const Header = ({ currentUser, signOutUser }) => {
         ) : (
           <OptionLink to="/signin">SIGN IN</OptionLink>
         )}
-
-        <CartIcon />
       </OptionsContainer>
+      <CartIcon />
       {hidden ? null : <CartDropdown />}
     </HeaderStyledContainer>
   );

@@ -1,8 +1,71 @@
-.directory-menu {
-  width: 80vw;
+.directory {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  background: none;
+  width: 90vw;
   padding: 20px;
+
+  .directory-menu {
+    width: auto !important;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 25px;
+    margin-top: 4.5em;
+
+    .see-more {
+      width: 300px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(245, 159, 0);
+      color: white;
+      border-radius: 100%;
+      font-size: 2em;
+      font-weight: bolder;
+      cursor: pointer;
+    }
+  }
+
+  .hero-text {
+    width: 30vw;
+
+    .text {
+      font-size: 3.5em;
+      position: absolute;
+      font-weight: bolder;
+      color: rgb(15, 15, 15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      .line {
+        width: 300px;
+        height: 5px;
+        background-color: rgb(245, 159, 0);
+      }
+    }
+    .shop-now {
+      position: relative;
+      margin-top: 3em;
+      background: rgb(15, 15, 15);
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      font-size: 1em;
+      padding: 1em 2.5em;
+      border: none;
+      cursor: pointer;
+    }
+
+    .descp {
+      margin-top: 4em;
+      font-size: 1.7em;
+      font-weight: bold;
+
+      #bolded-color {
+        color: rgb(245, 159, 0);
+      }
+    }
+  }
 }
