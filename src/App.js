@@ -4,7 +4,7 @@ import "./App.css";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selector";
 import { checkUserSession } from "./redux/user/user.actions";
-import MainPage from "./Pages/MainPage/MainPage.component";
+import MainPage from "./pages/MainPage/MainPage.component";
 
 function App({ currentUser, checkUserSessionUpdate }) {
   useEffect(() => {
