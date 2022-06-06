@@ -11,6 +11,7 @@ const MenuItem = ({ title, imageUrl, history, linkUrl, match }) => {
           backgroundImage: `url(${imageUrl})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
+          verticalAlign: "middle",
         }}
         onClick={() => history.push(`${match.url}${linkUrl}`)}
       >

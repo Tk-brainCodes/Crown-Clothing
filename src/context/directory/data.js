@@ -1,8 +1,8 @@
-import hat from "../../assets/hero-image/hat.jpg";
-import jackets from "../../assets/hero-image/jackets.jpg";
-import mens from "../../assets/hero-image/mens.jpg";
-import sneakers from "../../assets/hero-image/sneakers.jpg";
-import womens from "../../assets/hero-image/womens.jpg";
+import hat from "../../assets/hero-image/new-hat.jpg";
+import jackets from "../../assets/hero-image/new-jacket.jpg";
+import mens from "../../assets/hero-image/new-mens.jpg";
+import sneakers from "../../assets/hero-image/new-sneakers.jpg";
+import womens from "../../assets/hero-image/new-women.jpg";
 
 export const DIRECTORY_DATA = [
   {

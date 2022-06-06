@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { connect } from "react-redux";
 import {
   HeaderStyledContainer,
@@ -8,7 +8,6 @@ import {
   OptionsContainer,
 } from "./header.styles";
 import { signOutStart } from "../../redux/user/user.actions";
-import { ReactComponent as Logo } from "../../assets/crown.svg";
 import CartIcon from "../cart-icons/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import { CartContext } from "../../provider/cart.provider";
