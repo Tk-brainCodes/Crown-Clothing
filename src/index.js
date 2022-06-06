@@ -7,6 +7,7 @@ import CartProvider from "./provider/cart.provider";
 import "./index.css";
 import App from "./App";
 import { store, persistor } from "./redux/store";
+import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,3 +23,4 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
+serviceWorker.register();
